@@ -48,7 +48,8 @@
     normalize css
 ============================== */
 html {
-    max-width: 1680px;
+    margin: 0 auto;
+    max-width: 960px;
     @include box-sizing(border-box);
 }
 
@@ -64,17 +65,16 @@ html {
 }
 
 body {
-    background-color: #f4f4f4;
     @include font-settings();
     @include font-stack-html();
     @include font-size($grid4x);
     @include line-height($grid4x);
 }
 
-// ::selection {
-//     color: white;
-//     background-color: transparent;
-// }
+::selection {
+    // color: white;
+    background-color: transparent !important;
+}
 
 input:focus,
 select:focus,
@@ -86,15 +86,6 @@ textarea:focus {
     &::-ms-reveal {
         display: none;
     }
-
-    // &::-webkit-contacts-auto-fill-button,
-    // &::-webkit-credentials-auto-fill-button {
-    //     right: 0;
-    //     position: absolute;
-    //     visibility: hidden;
-    //     pointer-events: none;
-    //     display: none !important;
-    // }
 }
 
 

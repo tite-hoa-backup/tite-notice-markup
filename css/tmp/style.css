@@ -4,7 +4,6 @@
 ============================== */
 @import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css";
 @import "https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 /* ==============================
     scss modules - global
 ============================== */
@@ -60,7 +59,8 @@
     normalize css
 ============================== */
 html {
-  max-width: 1680px;
+  margin: 0 auto;
+  max-width: 960px;
   -webkit-box-sizing: border-box;
   -khtml-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -104,7 +104,6 @@ html {
     zoom: 1; }
 
 body {
-  background-color: #f4f4f4;
   direction: ltr;
   font-feature-settings: 'liga';
   -moz-font-feature-settings: 'liga';
@@ -121,6 +120,9 @@ body {
   font-size: 1rem;
   line-height: 25.6px;
   line-height: 1.6rem; }
+
+::selection {
+  background-color: transparent !important; }
 
 input:focus,
 select:focus,
@@ -333,3 +335,103 @@ p {
 /* ==============================
   radio, checkbox styling
 ============================== */
+/* ==============================
+    scss modules - components
+============================== */
+.accordion__container .accordion__container--wrapper:nth-child(2n) .accordion__container--header {
+  background-color: #f4f4f4; }
+
+.accordion__container .accordion__container--wrapper .accordion__container--header {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  background-color: #fff;
+  padding: 24px 16px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-will-change: transition;
+  -khtml-will-change: transition;
+  -moz-will-change: transition;
+  -ms-will-change: transition;
+  -o-will-change: transition;
+  will-change: transition;
+  zoom: 1; }
+  .accordion__container .accordion__container--wrapper .accordion__container--header:active {
+    border: none;
+    color: #333; }
+  .accordion__container .accordion__container--wrapper .accordion__container--header:hover {
+    opacity: .54; }
+  .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--title {
+    float: right;
+    width: calc(100% - 32px);
+    font-size: 16px;
+    font-size: 1rem; }
+  .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--icon {
+    float: left;
+    width: 32px; }
+    .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--icon::after {
+      color: #ccc !important;
+      content: "\02795";
+      font-size: 12px;
+      font-size: 0.75rem; }
+    .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--icon.active:after {
+      content: "\2796"; }
+
+.accordion__container .accordion__container--wrapper .accordion__container--box {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  background-color: #fff;
+  -webkit-transition: max-height 0.25s ease;
+  transition: max-height 0.25s ease;
+  -webkit-will-change: transition;
+  -khtml-will-change: transition;
+  -moz-will-change: transition;
+  -ms-will-change: transition;
+  -o-will-change: transition;
+  will-change: transition;
+  zoom: 1; }
+  .accordion__container .accordion__container--wrapper .accordion__container--box .accordion__container--text {
+    padding: 8px 0 32px; }
+
+.pagination__container {
+  margin: 16px auto; }
+  .pagination__container .pagination__container--body {
+    left: 50%;
+    position: absolute;
+    margin-right: -50%;
+    display: inline-block;
+    padding-bottom: 16px;
+    -webkit-transform: translateX(-50%);
+    -khtml-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-will-change: transform;
+    -khtml-will-change: transform;
+    -moz-will-change: transform;
+    -ms-will-change: transform;
+    -o-will-change: transform;
+    will-change: transform;
+    zoom: 1; }
+    .pagination__container .pagination__container--body .pagination__container--number {
+      float: left;
+      color: #333;
+      text-decoration: none;
+      padding: 8px 16px;
+      -webkit-border-radius: 8px;
+      -ms-border-radius: 8px;
+      border-radius: 8px;
+      -webkit-will-change: border-radius;
+      -khtml-will-change: border-radius;
+      -moz-will-change: border-radius;
+      -ms-will-change: border-radius;
+      -o-will-change: border-radius;
+      will-change: border-radius;
+      zoom: 1; }
+      .pagination__container .pagination__container--body .pagination__container--number.active {
+        color: #fff;
+        background-color: #17C060; }
+      .pagination__container .pagination__container--body .pagination__container--number:hover:not(.active) {
+        background-color: #f4f4f4; }

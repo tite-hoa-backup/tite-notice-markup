@@ -6,8 +6,7 @@
 ============================== */
 @import
     "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css",
-    "https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css",
-    "https://fonts.googleapis.com/icon?family=Material+Icons";
+    "https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css";
 
 
 /* ==============================
@@ -21,3 +20,11 @@
     "modules/global",
     "modules/fonts",
     "modules/mixins";
+
+
+/* ==============================
+    scss modules - components
+============================== */
+@import
+    "components/accordion",
+    "components/pagination";

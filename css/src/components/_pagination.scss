@@ -1,0 +1,32 @@
+.pagination__container {
+    margin: $grid4x auto;
+
+    .pagination__container--body {
+        left: 50%;
+        position: absolute;
+        margin-right: -50%;
+        display: inline-block;
+        padding-bottom: $grid4x;
+        @include transform(translateX(-50%));
+    
+        .pagination__container--number {
+            float: left;
+            color: $text333;
+            text-decoration: none;
+            padding: $grid2x $grid4x;
+            @include border-radius($grid2x);
+    
+            &.active {
+                color: #fff;
+                background-color: $brand;
+            }
+    
+            &:hover {
+    
+                &:not(.active) {
+                    background-color: $textf4;
+                }
+            }
+        }
+    }
+}
