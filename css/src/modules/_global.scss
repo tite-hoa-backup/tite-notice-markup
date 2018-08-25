@@ -1,0 +1,256 @@
+/* ==============================
+    mixin default font
+============================== */
+@mixin font-stack-html() {
+            font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+       -moz-font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+    -webkit-font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+}
+
+
+
+/* ==============================
+    text rendering
+============================== */
+@mixin font-settings() {
+    direction: ltr;
+            font-feature-settings: 'liga';
+       -moz-font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale !important;
+     -webkit-font-smoothing: antialiased !important;
+            text-rendering:  optimizeLegibility !important;
+    -webkit-text-decoration-skip: ink;
+            text-decoration-skip: ink;
+}
+
+
+
+/* ==============================
+    default font-size, line-height
+============================== */
+@function calculateRem($size) {
+    $remSize: $size / $grid4x;
+    @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+@mixin line-height($size) {
+    line-height: $size * 1.6;
+    line-height: calculateRem($size) * 1.6;
+}
+
+
+
+/* ==============================
+    normalize css
+============================== */
+html {
+    max-width: 1680px;
+    @include box-sizing(border-box);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    @include box-sizing(inherit);
+    
+    &::before,
+    &::after {
+        @include box-sizing(inherit);
+    }
+}
+
+body {
+    background-color: #f4f4f4;
+    @include font-settings();
+    @include font-stack-html();
+    @include font-size($grid4x);
+    @include line-height($grid4x);
+}
+
+// ::selection {
+//     color: white;
+//     background-color: transparent;
+// }
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+    outline: none;
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+    }
+
+    // &::-webkit-contacts-auto-fill-button,
+    // &::-webkit-credentials-auto-fill-button {
+    //     right: 0;
+    //     position: absolute;
+    //     visibility: hidden;
+    //     pointer-events: none;
+    //     display: none !important;
+    // }
+}
+
+
+select,
+input[type="date"],
+input[type="time"],
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer !important;
+}
+
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+::-ms-input-placeholder,
+:-ms-input-placeholder,
+::placeholder {
+    opacity: 1;
+    color: $texteee;
+}
+
+
+/* ==============================
+    opacity
+============================== */
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+    @include render-hack(opacity);
+}
+
+
+/* ==============================
+    fonts
+============================== */
+body {
+    outline: none;
+    color: $text333;
+}
+
+a {
+    color: $brand;
+    text-decoration: none;
+    @include transition(color .25s ease);
+  
+    &:hover {
+        color: $brand-hover;
+    }
+}
+
+h1 {
+    font-weight: 900;
+    @include font-size($grid8x);
+    @include line-height($grid4x);
+}
+
+h3 {
+    font-weight: 900;
+    @include font-size($grid6x);
+    @include line-height($grid8x);
+}
+
+p {
+    @include font-size($grid4x);
+    @include line-height($grid4x);
+
+    b {
+        font-weight: 900;
+    }
+}
+
+
+/* ==============================
+    global wrapper container
+============================== */
+.wrapper {
+    width: 100%;
+}
+
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+
+    @media #{$wide} {
+        width: 800px;
+    }
+
+    @media #{$desktop} {
+        width: 640px;
+    }
+
+    @media #{$tablet} {
+        width: 480px;
+    }
+
+    @media #{$middle} {
+        width: 360px;
+    }
+
+    @media #{$mobile} {
+        width: 328px;
+    }
+
+    @media #{$mini} {
+        width: 288px;
+    }
+}
+
+
+/* ==============================
+    text size with media query
+============================== */
+%text-spec-mqbp {
+    h1 {
+        @include font-size($grid10x);
+        @include line-height($grid4x);
+        @include transition(all .5s ease);
+    }
+
+    p {
+        @include font-size($grid5x);
+        @include line-height($grid5x);
+        @include transition(all .5s ease);
+
+        b {
+            font-weight: 900;
+        }
+    }
+
+    @media #{$middle} {
+        h1 {
+            @include font-size($grid8x);
+            @include line-height($grid2x);
+        }
+
+        p {
+            @include font-size($grid4x);
+            @include line-height($grid4x);
+        }
+    }
+}
+
+
+/* ==============================
+    scale svg image only ie
+============================== */
+// img[src$=".svg"] {
+//     width: 100%;
+// }
+
+@media #{$ie} {
+    img[src$=".svg"] {
+      width: 100%;
+    }
+}

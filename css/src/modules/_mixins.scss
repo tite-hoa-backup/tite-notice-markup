@@ -1,0 +1,206 @@
+/* ==============================
+  text centerlize
+============================== */
+@mixin center-text(){
+    top: 50%;
+    position: relative;
+    display: inline-block;
+    @include transform(translateY(-50%));
+}
+
+
+
+/* ==============================
+  overflow ellipsis
+============================== */
+@mixin overflow(){
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    @include text-overflow();
+}
+
+
+
+/* ==============================
+  selection $brand
+============================== */
+@mixin selection(){
+    ::-moz-selection {
+        color: white !important;
+        background-color: $brand !important;
+    }
+    ::selection {
+        color: white !important;
+        background-color: $brand !important;
+    }
+}
+
+
+
+/* ==============================
+  board card design/layout
+============================== */
+@mixin board-card(){
+    padding: $grid4x;
+    background-color: white;
+    @include border-radius($grid2x $grid2x 0 0);
+}
+
+
+
+/* ==============================
+  link hover underline animation effect
+============================== */
+%underline {
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: inline !important;
+    
+    &:after {
+        right: 0;
+        width: 0;
+        height: 3px;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        background: white;
+        bottom: calc(-#{$grid});
+        @include transition(width .5s ease);
+    }
+    
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+
+
+/* ==============================
+  center icon text for pagination
+============================== */
+@mixin center-icon-text(){
+    display:     -webkit-inline-box;
+    display:    -webkit-inline-flex;
+    display:        -moz-inline-box;
+    display:     -ms-inline-flexbox;
+    display:            inline-flex;
+    -webkit-box-align:       center;
+    -webkit-align-items:     center;
+       -moz-box-align:       center;
+        -ms-flex-align:      center;
+            align-items:     center;
+    -webkit-box-pack:        center;
+    -webkit-justify-content: center;
+       -moz-box-pack:        center;
+        -ms-flex-pack:       center;
+            justify-content: center;
+}
+
+
+
+/* ==============================
+  white button ($brand border)
+============================== */
+@mixin btn-brand-border(){
+    color: $brand;
+    cursor: pointer;
+    font-weight: 900;
+    border: 1px solid $brand;
+    background-color: white;
+    @include border-radius();
+    @include transition(all .25s ease);
+    
+    &:hover {
+        color: white;
+        background-color: $brand;
+    }
+}
+
+
+
+/* ==============================
+  button pressed
+============================== */
+@mixin button-pressed($val:0.95){
+    @include transition(all .25s ease !important);
+    &:active {
+        @include transform(scale($val));
+    }
+}
+
+
+
+/* ==============================
+  view count span
+============================== */
+@mixin view-count(){
+    color: $text999;
+    font-weight: 900;
+    margin-top: $grid4x;
+    display: inline-block;
+    @include font-size($grid3x + ($grid / 2));
+
+    &::after {
+        font-weight: 400;
+        content: "이 읽었습니다";
+    }
+}
+
+
+
+/* ==============================
+  radio, checkbox styling
+============================== */
+@mixin input-styling(){
+    cursor: pointer;
+    position: relative;
+    user-select:         none;
+    -o-user-select:      none;
+    -ms-user-select:     none;
+    -moz-user-select:    none;
+    -khtml-user-select:  none;
+    -webkit-user-select: none;
+
+    &:not(:last-of-type) {
+        margin-right: $grid;
+    }
+
+    input {
+        opacity: 0;
+        display: none;
+        
+        &:checked ~ span {
+            color: white;
+            font-weight: 900;
+            border: 1px solid $brand;
+            background-color: $brand;
+        }
+    }
+
+    span {
+        display: inline-block;
+        padding: $grid2x $grid4x;
+        border: 1px solid $texteee;
+        @include border-radius();
+        @include button-pressed(0.95);
+
+        &:hover {
+            background-color: $textfa;
+        }
+    }
+
+    @media #{$wide} {
+        margin-top: $grid2x;
+        display: inline-block;
+
+        input {
+            margin-left: $grid2x;
+        }
+    }
+}

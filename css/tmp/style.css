@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* ==============================
+    fonts, icons
+============================== */
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css";
+@import "https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+/* ==============================
+    scss modules - global
+============================== */
+/* ==============================
+  4px grid system
+============================== */
+/* ==============================
+  media query breakpoints
+============================== */
+/* ==============================
+  browser specific
+============================== */
+/* ==============================
+  color stack
+============================== */
+/* ==============================
+  gpu hack
+============================== */
+/* ==============================
+  border radius
+============================== */
+/* ==============================
+    transition
+============================== */
+/* ==============================
+  transform
+============================== */
+/* ==============================
+  box-shadow
+============================== */
+/* ==============================
+  box-sizing
+============================== */
+/* ==============================
+  text-overflow
+============================== */
+/* ==============================
+    center vertically
+============================== */
+/* ==============================
+  make center
+============================== */
+/* ==============================
+    mixin default font
+============================== */
+/* ==============================
+    text rendering
+============================== */
+/* ==============================
+    default font-size, line-height
+============================== */
+/* ==============================
+    normalize css
+============================== */
+html {
+  max-width: 1680px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-will-change: box-sizing;
+  -khtml-will-change: box-sizing;
+  -moz-will-change: box-sizing;
+  -ms-will-change: box-sizing;
+  -o-will-change: box-sizing;
+  will-change: box-sizing;
+  zoom: 1; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  -khtml-box-sizing: inherit;
+  -ms-box-sizing: inherit;
+  -o-box-sizing: inherit;
+  box-sizing: inherit;
+  -webkit-will-change: box-sizing;
+  -khtml-will-change: box-sizing;
+  -moz-will-change: box-sizing;
+  -ms-will-change: box-sizing;
+  -o-will-change: box-sizing;
+  will-change: box-sizing;
+  zoom: 1; }
+  *::before, *::after {
+    -webkit-box-sizing: inherit;
+    -khtml-box-sizing: inherit;
+    -ms-box-sizing: inherit;
+    -o-box-sizing: inherit;
+    box-sizing: inherit;
+    -webkit-will-change: box-sizing;
+    -khtml-will-change: box-sizing;
+    -moz-will-change: box-sizing;
+    -ms-will-change: box-sizing;
+    -o-will-change: box-sizing;
+    will-change: box-sizing;
+    zoom: 1; }
+
+body {
+  background-color: #f4f4f4;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+  -moz-font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+  -webkit-font-family: 'Spoqa Han Sans', 'Apple SD Gothic Neo', 'SF Pro KR', 'SF Pro Display', 'Apple Gothic', 'Nanum Barun Gothic', 'Nanum Gothic', '돋움', 'Dotum', 'sans-serif';
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 25.6px;
+  line-height: 1.6rem; }
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none; }
+  input:focus::-ms-clear, input:focus::-ms-reveal,
+  select:focus::-ms-clear,
+  select:focus::-ms-reveal,
+  button:focus::-ms-clear,
+  button:focus::-ms-reveal,
+  textarea:focus::-ms-clear,
+  textarea:focus::-ms-reveal {
+    display: none; }
+
+select,
+input[type="date"],
+input[type="time"],
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer !important; }
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+::-ms-input-placeholder,
+:-ms-input-placeholder,
+::placeholder {
+  opacity: 1;
+  color: #eee; }
+
+/* ==============================
+    opacity
+============================== */
+/* ==============================
+    fonts
+============================== */
+body {
+  outline: none;
+  color: #333; }
+
+a {
+  color: #17C060;
+  text-decoration: none;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+  -webkit-will-change: transition;
+  -khtml-will-change: transition;
+  -moz-will-change: transition;
+  -ms-will-change: transition;
+  -o-will-change: transition;
+  will-change: transition;
+  zoom: 1; }
+  a:hover {
+    color: #14A251; }
+
+h1 {
+  font-weight: 900;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 25.6px;
+  line-height: 1.6rem; }
+
+h3 {
+  font-weight: 900;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 51.2px;
+  line-height: 3.2rem; }
+
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 25.6px;
+  line-height: 1.6rem; }
+  p b {
+    font-weight: 900; }
+
+/* ==============================
+    global wrapper container
+============================== */
+.wrapper {
+  width: 100%; }
+
+.container {
+  width: 960px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1280px) {
+    .container {
+      width: 800px; } }
+  @media screen and (max-width: 980px) {
+    .container {
+      width: 640px; } }
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 480px; } }
+  @media screen and (max-width: 520px) {
+    .container {
+      width: 360px; } }
+  @media screen and (max-width: 360px) {
+    .container {
+      width: 328px; } }
+  @media screen and (max-width: 320px) {
+    .container {
+      width: 288px; } }
+
+/* ==============================
+    text size with media query
+============================== */
+/* ==============================
+    scale svg image only ie
+============================== */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%; } }
+
+/* ==============================
+    set md font-face
+============================== */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/MaterialIcons-Regular.eot");
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"); }
+
+/* ==============================
+    Global md icon settings
+============================== */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga'; }
+
+/* ==============================
+    Rules for sizing the icon
+============================== */
+.md-16 {
+  font-size: 16px; }
+
+.md-18 {
+  font-size: 18px; }
+
+.md-20 {
+  font-size: 20px; }
+
+.md-22 {
+  font-size: 22px; }
+
+.md-24 {
+  font-size: 24px; }
+
+.md-32 {
+  font-size: 32px; }
+
+.md-36 {
+  font-size: 36px; }
+
+.md-48 {
+  font-size: 48px; }
+
+/* ==============================
+  text centerlize
+============================== */
+/* ==============================
+  overflow ellipsis
+============================== */
+/* ==============================
+  selection $brand
+============================== */
+/* ==============================
+  board card design/layout
+============================== */
+/* ==============================
+  link hover underline animation effect
+============================== */
+/* ==============================
+  center icon text for pagination
+============================== */
+/* ==============================
+  white button ($brand border)
+============================== */
+/* ==============================
+  button pressed
+============================== */
+/* ==============================
+  view count span
+============================== */
+/* ==============================
+  radio, checkbox styling
+============================== */
