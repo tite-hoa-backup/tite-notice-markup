@@ -137,24 +137,6 @@
 
 
 /* ==============================
-  view count span
-============================== */
-@mixin view-count(){
-    color: $text999;
-    font-weight: 900;
-    margin-top: $grid4x;
-    display: inline-block;
-    @include font-size($grid3x + ($grid / 2));
-
-    &::after {
-        font-weight: 400;
-        content: "이 읽었습니다";
-    }
-}
-
-
-
-/* ==============================
   radio, checkbox styling
 ============================== */
 @mixin input-styling(){

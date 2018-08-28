@@ -1,0 +1,29 @@
+.header__container {
+    z-index: 10;
+    
+    .header__container--wrapper {
+        width: 100%;
+        max-width: 960px;
+        position: fixed;
+        height: $header-height;
+        background-color: $brand;
+        @include box-shadow();
+
+        .header__container--logo {
+            display: inline-block;
+            margin: $grid2x $grid4x;
+        }
+
+        .header__container--title {
+            color: #fff;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+            @include transform(translateY(-50%));
+
+            &::after {
+                content: "공지사항";
+            }
+        }
+    }
+}

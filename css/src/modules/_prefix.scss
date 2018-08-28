@@ -1,25 +1,10 @@
 /* ==============================
-  gpu hack
-============================== */
-@mixin render-hack      ($val...) {
-    -webkit-will-change: $val;
-    -khtml-will-change:  $val;
-    -moz-will-change:    $val;
-    -ms-will-change:     $val;
-    -o-will-change:      $val;
-    will-change:         $val;
-    zoom: 1;
-}
-
-
-/* ==============================
   border radius
 ============================== */
 @mixin border-radius      ($val:$grid2x) {
     -webkit-border-radius: $val;
     -ms-border-radius:     $val;
     border-radius:         $val;
-    @include render-hack(border-radius);
 }
 
 
@@ -29,7 +14,6 @@
 @mixin transition      ($transition...) {
     -webkit-transition: $transition;
     transition:         $transition;
-    @include render-hack(transition);
 }
 
 
@@ -40,19 +24,17 @@
     -webkit-transform: $val;
     -khtml-transform:  $val;
     transform:         $val;
-  @include render-hack(transform);
 }
 
 
 /* ==============================
   box-shadow
 ============================== */
-@mixin box-shadow         ($val:$grid, $val2:$grid2x, $color:$black08){
+@mixin box-shadow         ($val:2px, $val2:$grid, $color:$black16){
     -webkit-box-shadow:  0 $val $val2 $color;
     -ms-box-shadow:      0 $val $val2 $color;
     -o-box-shadow:       0 $val $val2 $color;
     box-shadow:          0 $val $val2 $color;
-    @include render-hack(box-shadow);
 }
 
 
@@ -65,7 +47,6 @@
     -ms-box-sizing:     $val;
     -o-box-sizing:      $val;
     box-sizing:         $val;
-    @include render-hack(box-sizing);
 }
 
 

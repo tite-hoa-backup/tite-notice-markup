@@ -20,8 +20,8 @@
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "browser-sync": "^2.24.6",
-    "gulp-autoprefixer": "^5.0.0",
+    "browser-sync": "^2.24.7",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-inject": "^4.3.2",

@@ -89,27 +89,6 @@ textarea:focus {
 }
 
 
-select,
-input[type="date"],
-input[type="time"],
-input[type="file"],
-input[type="radio"],
-input[type="checkbox"] {
-    cursor: pointer !important;
-}
-
-
-::-webkit-input-placeholder,
-::-moz-placeholder,
-:-moz-placeholder,
-::-ms-input-placeholder,
-:-ms-input-placeholder,
-::placeholder {
-    opacity: 1;
-    color: $texteee;
-}
-
-
 /* ==============================
     opacity
 ============================== */
