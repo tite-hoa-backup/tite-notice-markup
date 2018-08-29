@@ -355,6 +355,7 @@ p {
       content: "\2796"; }
     .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--title {
       float: right;
+      font-weight: 900;
       width: calc(100% - 32px);
       font-size: 16px;
       font-size: 1rem;
@@ -362,6 +363,7 @@ p {
       line-height: 1.6rem; }
       .accordion__container .accordion__container--wrapper .accordion__container--header .accordion__container--title .accordion__container--date {
         color: #999;
+        font-weight: 400;
         display: inline-block;
         vertical-align: baseline;
         font-size: 14px;

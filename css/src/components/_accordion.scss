@@ -62,12 +62,14 @@
 
             .accordion__container--title {
                 float: right;
+                font-weight: 900;
                 width: calc(100% - #{$icon-width});
                 @include font-size($grid4x);
                 @include line-height($grid4x);
 
                 .accordion__container--date {
                     color: $text999;
+                    font-weight: 400;
                     display: inline-block;
                     vertical-align: baseline;
                     @include font-size(14px);
