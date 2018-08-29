@@ -23,7 +23,7 @@
             cursor: pointer;
             text-align: left;
             background-color: #fff;
-            padding: $grid4x $grid4x;
+            padding: $grid5x $grid4x;
             @include transition(all .25s ease);
 
             @media #{$ie} {

@@ -330,7 +330,7 @@ p {
     cursor: pointer;
     text-align: left;
     background-color: #fff;
-    padding: 16px 16px;
+    padding: 20px 16px;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
