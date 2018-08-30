@@ -1,0 +1,23 @@
+.copyright__container {
+    width: 100%;
+    padding: 0 $grid4x;
+
+    .copyright__container--body {
+        margin-top: $grid24x;
+        margin-bottom: $grid8x;
+
+        .copyright__container--text {
+            color: $text999;
+            @include font-size($grid3x);
+            @include line-height($grid3x);
+
+            &::before {
+                content: "© ";
+            }
+
+            &::after {
+                content: ". 타이트 주식회사. Tite, Ltd., All Rights Reserved.";
+            }
+        }
+    }
+}

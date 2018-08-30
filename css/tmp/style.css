@@ -422,3 +422,20 @@ p {
         background-color: #17C060; }
       .pagination__container .pagination__container--body .pagination__container--number:hover:not(.active) {
         background-color: #f4f4f4; }
+
+.copyright__container {
+  width: 100%;
+  padding: 0 16px; }
+  .copyright__container .copyright__container--body {
+    margin-top: 96px;
+    margin-bottom: 32px; }
+    .copyright__container .copyright__container--body .copyright__container--text {
+      color: #999;
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 19.2px;
+      line-height: 1.2rem; }
+      .copyright__container .copyright__container--body .copyright__container--text::before {
+        content: "© "; }
+      .copyright__container .copyright__container--body .copyright__container--text::after {
+        content: ". 타이트 주식회사. Tite, Ltd., All Rights Reserved."; }

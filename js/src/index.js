@@ -1,7 +1,7 @@
 /* ==============================
     accordion script
 ============================== */
-(function() {
+(function(){
     var accordion = document.getElementsByClassName('accordion__container--header');
     
     for (i = 0; i < accordion.length; i++) {
@@ -17,6 +17,16 @@
             }
         });
     }
+})();
+
+
+/* ==============================
+    getFullYear
+============================== */
+(function(){
+    var d = new Date();
+    var y = d.getFullYear();
+    document.getElementsByClassName("copyright__container--text")[0].innerHTML = y;
 })();
 
 
