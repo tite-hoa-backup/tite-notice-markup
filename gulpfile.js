@@ -18,11 +18,11 @@ gulp.task('browser-sync', function() {
     browserSync.init(['*'], {
         files: [
             './*',
-            './html/*',
-            './html/**/*',
             './css/src/*',
+            './css/tmp/*',
             './css/dist/*',
-            './js/**/*',
+            './js/src/*',
+            './js/dist/*',
             './images/src/*',
             './images/dist/*',
         ],

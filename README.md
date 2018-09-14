@@ -1,6 +1,6 @@
 # Tite - Notice
 
-> Website for our Neighbors 👪🇰🇷
+> LocalLife Board
 
 ## Setup
 

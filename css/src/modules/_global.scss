@@ -8,7 +8,6 @@
 }
 
 
-
 /* ==============================
     text rendering
 ============================== */
@@ -23,7 +22,6 @@
     -webkit-text-decoration-skip: ink;
             text-decoration-skip: ink;
 }
-
 
 
 /* ==============================
@@ -41,7 +39,6 @@
     line-height: $size * 1.6;
     line-height: calculateRem($size) * 1.6;
 }
-
 
 
 /* ==============================
@@ -71,15 +68,17 @@ body {
     @include line-height($grid4x);
 }
 
+::-moz-selection {
+    // color: white;
+    background-color: transparent !important;
+}
+
 ::selection {
     // color: white;
     background-color: transparent !important;
 }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+button:focus {
     outline: none;
 
     &::-ms-clear,
@@ -96,7 +95,6 @@ textarea:focus {
     opacity: $opacity;
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie);
-    @include render-hack(opacity);
 }
 
 
@@ -116,12 +114,6 @@ a {
     &:hover {
         color: $brand-hover;
     }
-}
-
-h1 {
-    font-weight: 900;
-    @include font-size($grid8x);
-    @include line-height($grid4x);
 }
 
 h3 {

@@ -2,8 +2,6 @@
   border radius
 ============================== */
 @mixin border-radius      ($val:$grid2x) {
-    -webkit-border-radius: $val;
-    -ms-border-radius:     $val;
     border-radius:         $val;
 }
 

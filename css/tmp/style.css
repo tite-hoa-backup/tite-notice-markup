@@ -91,21 +91,15 @@ body {
   line-height: 25.6px;
   line-height: 1.6rem; }
 
+::-moz-selection {
+  background-color: transparent !important; }
+
 ::selection {
   background-color: transparent !important; }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+button:focus {
   outline: none; }
-  input:focus::-ms-clear, input:focus::-ms-reveal,
-  select:focus::-ms-clear,
-  select:focus::-ms-reveal,
-  button:focus::-ms-clear,
-  button:focus::-ms-reveal,
-  textarea:focus::-ms-clear,
-  textarea:focus::-ms-reveal {
+  button:focus::-ms-clear, button:focus::-ms-reveal {
     display: none; }
 
 /* ==============================
@@ -125,13 +119,6 @@ a {
   transition: color 0.25s ease; }
   a:hover {
     color: #14A251; }
-
-h1 {
-  font-weight: 900;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 25.6px;
-  line-height: 1.6rem; }
 
 h3 {
   font-weight: 900;
@@ -154,65 +141,6 @@ p {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   img[src$=".svg"] {
     width: 100%; } }
-
-/* ==============================
-    set md font-face
-============================== */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/MaterialIcons-Regular.eot");
-  src: local("Material Icons"), local("MaterialIcons-Regular"); }
-
-/* ==============================
-    Global md icon settings
-============================== */
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
-  -moz-font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga'; }
-
-/* ==============================
-    Rules for sizing the icon
-============================== */
-.md-16 {
-  font-size: 16px; }
-
-.md-18 {
-  font-size: 18px; }
-
-.md-20 {
-  font-size: 20px; }
-
-.md-22 {
-  font-size: 22px; }
-
-.md-24 {
-  font-size: 24px; }
-
-.md-32 {
-  font-size: 32px; }
-
-.md-36 {
-  font-size: 36px; }
-
-.md-48 {
-  font-size: 48px; }
 
 /* ==============================
     scss modules - components
@@ -342,8 +270,6 @@ p {
       color: #333;
       text-decoration: none;
       padding: 8px 16px;
-      -webkit-border-radius: 8px;
-      -ms-border-radius: 8px;
       border-radius: 8px; }
       .pagination__container .pagination__container--body .pagination__container--number.active {
         color: #fff;
@@ -381,29 +307,23 @@ p {
   left: 0; }
 
 [ripple] .ripple--container span {
+  -webkit-transform: scale(0);
   transform: scale(0);
   border-radius: 100%;
   position: absolute;
   opacity: 0.78;
   background-color: rgba(0, 0, 0, 0.08);
+  -webkit-animation: ripple 1000ms;
   animation: ripple 1000ms; }
-
-@-moz-keyframes ripple {
-  to {
-    opacity: 0;
-    transform: scale(2); } }
 
 @-webkit-keyframes ripple {
   to {
     opacity: 0;
-    transform: scale(2); } }
-
-@-o-keyframes ripple {
-  to {
-    opacity: 0;
+    -webkit-transform: scale(2);
     transform: scale(2); } }
 
 @keyframes ripple {
   to {
     opacity: 0;
+    -webkit-transform: scale(2);
     transform: scale(2); } }
