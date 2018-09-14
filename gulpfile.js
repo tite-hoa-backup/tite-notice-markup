@@ -10,6 +10,7 @@ const gulp = require('gulp'),
       browserSync = require('browser-sync').create();
 
 
+
 /* ==============================
     static server
 ============================== */
@@ -36,6 +37,7 @@ gulp.task('browser-sync', function() {
 });
 
 
+
 /* ==============================
     sass sync watch
 ============================== */
@@ -55,6 +57,7 @@ gulp.task('sass:watch', function () {
 });
 
 
+
 /* ==============================
     css autoprefixer & minify -> tmp to dist
 ============================== */
@@ -67,6 +70,7 @@ gulp.task('prefix-css', function () {
         .pipe(cleanCSS())
         .pipe(gulp.dest('./css/dist'));
 });
+
 
 
 /* ==============================
@@ -82,6 +86,7 @@ gulp.task('jsmin', function () {
 });
 
 
+
 /* ==============================
     image resizer
 ============================== */
@@ -91,6 +96,7 @@ gulp.task('img-resize', () =>
 		.pipe(gulp.dest('./img/dist'))
         .pipe(browserSync.reload({stream: true}))
 );
+
 
 
 /* ==============================
@@ -108,12 +114,15 @@ gulp.task('inject', function () {
 });
 
 
+
 /* ==============================
     gulp watch
 ============================== */
-gulp.task('watch', ['browser-sync',
+gulp.task('watch', [
+                    'browser-sync',
                     'sass:watch',
                     'prefix-css',
                     'jsmin',
                     'img-resize',
-                    'inject'])
+                    'inject'
+                ])

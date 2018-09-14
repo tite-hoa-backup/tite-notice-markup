@@ -38,15 +38,6 @@
   box-sizing
 ============================== */
 /* ==============================
-  text-overflow
-============================== */
-/* ==============================
-    center vertically
-============================== */
-/* ==============================
-  make center
-============================== */
-/* ==============================
     mixin default font
 ============================== */
 /* ==============================
@@ -158,37 +149,6 @@ p {
     font-weight: 900; }
 
 /* ==============================
-    global wrapper container
-============================== */
-.wrapper {
-  width: 100%; }
-
-.container {
-  width: 960px;
-  margin: 0 auto; }
-  @media screen and (max-width: 1280px) {
-    .container {
-      width: 800px; } }
-  @media screen and (max-width: 980px) {
-    .container {
-      width: 640px; } }
-  @media screen and (max-width: 768px) {
-    .container {
-      width: 480px; } }
-  @media screen and (max-width: 520px) {
-    .container {
-      width: 360px; } }
-  @media screen and (max-width: 360px) {
-    .container {
-      width: 328px; } }
-  @media screen and (max-width: 320px) {
-    .container {
-      width: 288px; } }
-
-/* ==============================
-    text size with media query
-============================== */
-/* ==============================
     scale svg image only ie
 ============================== */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -203,7 +163,6 @@ p {
   font-style: normal;
   font-weight: 400;
   src: url("/fonts/MaterialIcons-Regular.eot");
-  /* For IE6-8 */
   src: local("Material Icons"), local("MaterialIcons-Regular"); }
 
 /* ==============================
@@ -214,7 +173,6 @@ p {
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
-  /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -222,13 +180,9 @@ p {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
   font-feature-settings: 'liga';
   -moz-font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga'; }
@@ -261,37 +215,11 @@ p {
   font-size: 48px; }
 
 /* ==============================
-  text centerlize
-============================== */
-/* ==============================
-  overflow ellipsis
-============================== */
-/* ==============================
-  selection $brand
-============================== */
-/* ==============================
-  board card design/layout
-============================== */
-/* ==============================
-  link hover underline animation effect
-============================== */
-/* ==============================
-  center icon text for pagination
-============================== */
-/* ==============================
-  white button ($brand border)
-============================== */
-/* ==============================
-  button pressed
-============================== */
-/* ==============================
-  radio, checkbox styling
-============================== */
-/* ==============================
     scss modules - components
 ============================== */
 .header__container {
-  z-index: 10; }
+  z-index: 10;
+  position: absolute; }
   .header__container .header__container--wrapper {
     width: 100%;
     max-width: 960px;
@@ -419,6 +347,7 @@ p {
       border-radius: 8px; }
       .pagination__container .pagination__container--body .pagination__container--number.active {
         color: #fff;
+        font-weight: 900;
         background-color: #17C060; }
       .pagination__container .pagination__container--body .pagination__container--number:hover:not(.active) {
         background-color: #f4f4f4; }

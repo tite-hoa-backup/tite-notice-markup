@@ -1,10 +1,14 @@
+"use strict";
+
+
+
 /* ==============================
     accordion script
 ============================== */
 (function(){
     var accordion = document.getElementsByClassName('accordion__container--header');
     
-    for (i = 0; i < accordion.length; i++) {
+    for (var i = 0; i < accordion.length; i++) {
         accordion[i].addEventListener('click', function() {
             this.classList.toggle('active');
             var panel = this.nextElementSibling;
@@ -20,6 +24,7 @@
 })();
 
 
+
 /* ==============================
     getFullYear
 ============================== */
@@ -28,6 +33,7 @@
     var y = d.getFullYear();
     document.getElementsByClassName("copyright__container--text")[0].innerHTML = y;
 })();
+
 
 
 /* ==============================
@@ -133,6 +139,7 @@
         }
     });
 })();
+
 
 
 /* ==============================

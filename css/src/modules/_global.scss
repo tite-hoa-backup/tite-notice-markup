@@ -141,84 +141,8 @@ p {
 
 
 /* ==============================
-    global wrapper container
-============================== */
-.wrapper {
-    width: 100%;
-}
-
-
-.container {
-    width: 960px;
-    margin: 0 auto;
-
-    @media #{$wide} {
-        width: 800px;
-    }
-
-    @media #{$desktop} {
-        width: 640px;
-    }
-
-    @media #{$tablet} {
-        width: 480px;
-    }
-
-    @media #{$middle} {
-        width: 360px;
-    }
-
-    @media #{$mobile} {
-        width: 328px;
-    }
-
-    @media #{$mini} {
-        width: 288px;
-    }
-}
-
-
-/* ==============================
-    text size with media query
-============================== */
-%text-spec-mqbp {
-    h1 {
-        @include font-size($grid10x);
-        @include line-height($grid4x);
-        @include transition(all .5s ease);
-    }
-
-    p {
-        @include font-size($grid5x);
-        @include line-height($grid5x);
-        @include transition(all .5s ease);
-
-        b {
-            font-weight: 900;
-        }
-    }
-
-    @media #{$middle} {
-        h1 {
-            @include font-size($grid8x);
-            @include line-height($grid2x);
-        }
-
-        p {
-            @include font-size($grid4x);
-            @include line-height($grid4x);
-        }
-    }
-}
-
-
-/* ==============================
     scale svg image only ie
 ============================== */
-// img[src$=".svg"] {
-//     width: 100%;
-// }
-
 @media #{$ie} {
     img[src$=".svg"] {
       width: 100%;
