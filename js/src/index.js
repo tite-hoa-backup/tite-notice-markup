@@ -146,57 +146,95 @@
     ripple effect
 ============================== */
 (function() {
-    var cleanUp,
-        debounce,
-        i,
-        len,
-        ripple,
-        rippleContainer,
-        ripples,
-        showRipple;
+    var removeRipple, debounce, length, ripple, rippleContainer, ripples, makeRipple;
 
-    debounce = function(func, delay) {
-        var inDebounce;
-        inDebounce = undefined;
-        return function() {
-            var args, context;
-            context = this;
-            args = arguments;
-            clearTimeout(inDebounce);
-            return inDebounce = setTimeout(function() {
-            return func.apply(context, args);
-            }, delay);
+        debounce = function debounce(func, delay) {
+            var inDebounce = undefined;
+
+            return function () {
+                var context = this;
+                var args = arguments;
+                clearTimeout(inDebounce);
+
+                return inDebounce = setTimeout(function () {
+                return func.apply(context, args);
+                }, delay);
+            };
         };
-    };
 
-    showRipple = function(e) {
-        var pos, ripple, rippler, size, style, x, y;
-        ripple = this;
-        rippler = document.createElement('span');
-        size = ripple.offsetWidth;
-        pos = ripple.getBoundingClientRect();
-        x = e.pageX - pos.left - (size / 2);
-        y = e.pageY - pos.top - (size / 2);
-        style = 'top:' + y + 'px; left: ' + x + 'px; height: ' + size + 'px; width: ' + size + 'px;';
-        ripple.rippleContainer.appendChild(rippler);
-        return rippler.setAttribute('style', style);
-    };
+        makeRipple = function makeRipple(e) {
+            var ripple = this;
+            var setRipple = document.createElement('span');
 
-    cleanUp = function() {
-        while (this.rippleContainer.firstChild) {
-            this.rippleContainer.removeChild(this.rippleContainer.firstChild);
+            var size = ripple.offsetWidth;
+            var pos = ripple.getBoundingClientRect();
+            var x = e.clientX - pos.left - size / 2;
+            var y = e.clientY - pos.top - size / 2;
+            var style = 'top:' + y + 'px;left: ' + x + 'px; height: ' + size + 'px; width: ' + size + 'px;';
+
+            ripple.rippleContainer.appendChild(setRipple);
+
+            return setRipple.setAttribute('style', style);
+        };
+
+        removeRipple = function removeRipple() {
+            while (this.rippleContainer.firstChild) {
+                this.rippleContainer.removeChild(this.rippleContainer.firstChild);
+            }
+        };
+
+        ripples = document.querySelectorAll('[ripple]');
+
+        for (var i = 0, length = ripples.length; i < length; i++) {
+            ripple = ripples[i];
+
+            // set ripple parent style
+            ripple.style.zIndex = '100';
+            ripple.style.position = 'relative';
+            ripple.style.overflow = 'hidden';
+
+            rippleContainer = document.createElement('div');
+            rippleContainer.className = 'ripple--container';
+
+            // set ripple container style
+            rippleContainer.style.position = 'absolute';
+            rippleContainer.style.top = '0';
+            rippleContainer.style.right = '0';
+            rippleContainer.style.bottom = '0';
+            rippleContainer.style.left = '0';
+
+            ripple.addEventListener('mousedown', makeRipple);
+            ripple.addEventListener('mouseup', debounce(removeRipple, 2000));
+            ripple.rippleContainer = rippleContainer;
+            ripple.appendChild(rippleContainer);
         }
-    };
 
-    ripples = document.querySelectorAll('[ripple]');
-
-    for (i = 0, len = ripples.length; i < len; i++) {
-        ripple = ripples[i];
-        rippleContainer = document.createElement('div');
-        rippleContainer.className = 'ripple--container';
-        ripple.addEventListener('mousedown', showRipple);
-        ripple.addEventListener('mouseup', debounce(cleanUp, 2000));
-        ripple.rippleContainer = rippleContainer;
-        ripple.appendChild(rippleContainer);
-    }
+        // ripple style
+        var styleEl = document.createElement('style');
+        styleEl.innerHTML = '\
+            [ripple] .ripple--container span {\
+                -webkit-transform: scale(0);\
+                        transform: scale(0);\
+                border-radius: 100%;\
+                position: absolute;\
+                opacity: 0.5;\
+                background-color: rgba(0, 0, 0, 0.1);\
+                -webkit-animation: rippler 1000ms;\
+                        animation: rippler 1000ms;\
+            }\
+            @-webkit-keyframes rippler {\
+                to {\
+                opacity: 0;\
+                -webkit-transform: scale(2);\
+                        transform: scale(2);\
+                }\
+            }\
+            @keyframes rippler {\
+                to {\
+                opacity: 0;\
+                -webkit-transform: scale(2);\
+                        transform: scale(2);\
+                }\
+            }';
+        document.head.appendChild(styleEl);
 })();

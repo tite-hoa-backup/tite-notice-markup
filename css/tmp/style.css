@@ -146,7 +146,7 @@ p {
     scss modules - components
 ============================== */
 .header__container {
-  z-index: 10;
+  z-index: 10000;
   position: absolute; }
   .header__container .header__container--wrapper {
     width: 100%;
