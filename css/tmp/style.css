@@ -295,17 +295,6 @@ p {
       .copyright__container .copyright__container--body .copyright__container--text::after {
         content: ". 타이트 주식회사. Tite, Ltd., All Rights Reserved."; }
 
-[ripple] {
-  position: relative;
-  overflow: hidden; }
-
-[ripple] .ripple--container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; }
-
 [ripple] .ripple--container span {
   -webkit-transform: scale(0);
   transform: scale(0);
