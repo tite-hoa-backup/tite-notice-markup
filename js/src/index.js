@@ -197,11 +197,12 @@
             rippleContainer.className = 'ripple--container';
 
             // set ripple container style
+            rippleContainer.style.overflow = 'hidden';
             rippleContainer.style.position = 'absolute';
             rippleContainer.style.top = '0';
+            rippleContainer.style.left = '0';
             rippleContainer.style.right = '0';
             rippleContainer.style.bottom = '0';
-            rippleContainer.style.left = '0';
 
             ripple.addEventListener('mousedown', makeRipple);
             ripple.addEventListener('mouseup', debounce(removeRipple, 2000));
@@ -211,6 +212,6 @@
 
         // ripple style
         var styleEl = document.createElement('style');
-        styleEl.innerHTML = '[ripple] .ripple--container span {-webkit-transform: scale(0);transform: scale(0);border-radius: 100%;position: absolute;opacity: 0.5;background-color: rgba(0, 0, 0, 0.1);-webkit-animation: rippler 1000ms;animation: rippler 1000ms;}@-webkit-keyframes rippler {to {opacity: 0;-webkit-transform: scale(2);transform: scale(2);}}@keyframes rippler {to {opacity: 0;-webkit-transform: scale(2);transform: scale(2);}}';
+        styleEl.innerHTML = '[ripple] .ripple--container .ripple--body {will-change:transform,opacity;overflow:hidden;-webkit-transform:scale(0);-moz-transform:scale(0);-ms-transform:scale(0);-o-transform:scale(0);transform:scale(0);-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;position:absolute;opacity:0.5;background-color:rgba(0,0,0,0.1);-webkit-animation:rippler 1000ms;-moz-animation:rippler 1000ms;-o-animation:rippler 1000ms;animation:rippler 1000ms;}@-webkit-keyframes rippler{to{opacity:0;-webkit-transform:scale(2);transform:scale(2);}}@-moz-keyframes rippler{to{opacity:0;-webkit-transform:scale(2);-moz-transform:scale(2);transform:scale(2);}}@-o-keyframes rippler{to{opacity:0;-webkit-transform:scale(2);-o-transform:scale(2);transform:scale(2);}}@keyframes rippler{to{opacity:0;-webkit-transform:scale(2);-moz-transform:scale(2);-o-transform:scale(2);transform:scale(2);}}';
         document.head.appendChild(styleEl);
 })();
