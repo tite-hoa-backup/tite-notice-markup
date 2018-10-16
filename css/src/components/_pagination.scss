@@ -14,7 +14,7 @@
             color: $text333;
             text-decoration: none;
             padding: $grid2x $grid4x;
-            @include border-radius($grid2x);
+            @include border-radius();
     
             &.active {
                 color: #fff;

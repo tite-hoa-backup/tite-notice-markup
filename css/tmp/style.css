@@ -270,7 +270,9 @@ p {
       color: #333;
       text-decoration: none;
       padding: 8px 16px;
-      border-radius: 8px; }
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px; }
       .pagination__container .pagination__container--body .pagination__container--number.active {
         color: #fff;
         font-weight: 900;

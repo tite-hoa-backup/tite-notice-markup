@@ -1,7 +1,9 @@
 /* ==============================
   border radius
 ============================== */
-@mixin border-radius      ($val:$grid2x) {
+@mixin border-radius      ($val:$grid) {
+    -webkit-border-radius: $val;
+    -moz-border-radius:    $val;
     border-radius:         $val;
 }
 
