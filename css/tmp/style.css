@@ -97,10 +97,15 @@ body {
 ::selection {
   background-color: transparent !important; }
 
-button:focus {
-  outline: none; }
-  button:focus::-ms-clear, button:focus::-ms-reveal {
-    display: none; }
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; }
+  button:focus {
+    outline: none; }
+    button:focus::-ms-clear, button:focus::-ms-reveal {
+      display: none; }
+
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; }
 
 /* ==============================
     opacity
@@ -110,7 +115,8 @@ button:focus {
 ============================== */
 body {
   outline: none;
-  color: #333; }
+  color: #333;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; }
 
 a {
   color: #17C060;
