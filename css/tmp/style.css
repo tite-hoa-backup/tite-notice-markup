@@ -151,36 +151,9 @@ p {
 /* ==============================
     scss modules - components
 ============================== */
-.header__container {
-  z-index: 10000;
-  position: absolute; }
-  .header__container .header__container--wrapper {
-    width: 100%;
-    max-width: 960px;
-    position: fixed;
-    height: 56px;
-    background-color: #17C060;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); }
-    .header__container .header__container--wrapper .header__container--logo {
-      display: inline-block;
-      margin: 8px 16px; }
-    .header__container .header__container--wrapper .header__container--title {
-      color: #fff;
-      font-weight: 900;
-      position: relative;
-      display: inline-block;
-      -webkit-transform: translateY(-50%);
-      -khtml-transform: translateY(-50%);
-      transform: translateY(-50%); }
-      .header__container .header__container--wrapper .header__container--title::after {
-        content: "공지사항"; }
-
 .accordion__container {
   z-index: 1;
-  padding-top: 56px; }
+  padding-top: 8px; }
   .accordion__container .accordion__container--wrapper:nth-child(2n) .accordion__container--header,
   .accordion__container .accordion__container--wrapper:nth-child(2n) .accordion__container--box {
     background-color: #f4f4f4; }
