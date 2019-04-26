@@ -23,6 +23,7 @@ fi
 printf "\n"
 git add .
 git commit -m "$commitmsg"
-git push
+git push origin
+git push github
 
 exit
